@@ -25,7 +25,7 @@ public class PaymentService {
                     updateOrderStatus(paymentRequest.getOrderId(), "PAID");
                 } else {
                     // Handle payment failure
-                    updateOrderStatus(paymentRequest.getOrderId(), "FAILED");
+                    updateOrderStatus(paymentRequest.getOrderId(), "passed");
                 }
                 return paymentResponse;
             } else {
