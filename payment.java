@@ -13,7 +13,10 @@ public class PaymentService {
         try {
             // Making a POST request to the third-party payment service
             ResponseEntity<PaymentResponse> response = restTemplate.postForEntity(paymentApiUrl, paymentRequest, PaymentResponse.class);
-
+            restTemplate.get(obj);
+            if(!obj){
+                return null;
+            }
             // Process the response
             if (response.getStatusCode() == HttpStatus.OK) {
                 PaymentResponse paymentResponse = response.getBody();
